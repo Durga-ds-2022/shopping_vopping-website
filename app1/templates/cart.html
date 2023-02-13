@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block cart %}
+
+{% load static %} 
+<title>{% block cartt %}cart{% endblock cartt %}</title>   
+    <!--Body Content-->
+    <div id="page-content">
+    	<!--Page Title-->
+    	<div class="page section-header text-center">
+			<div class="page-title">
+        		<div class="wrapper"><h1 class="page-width">Shopping Cart</h1></div>
+      		</div>
+		</div>
+        <!--End Page Title-->
+        
+        <div class="container">
+        	<div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                	
+                	<form method="post" class="cart style2">
+                        {% csrf_token %}
+                		<table>
+                            <thead class="cart__row cart__header">
+                                <tr>
+                                    <th colspan="2" class="text-center">Product</th>
+                                    <th class="text-center">Price</th>
+                                    {% comment %} <th class="text-center">Quantity</th> {% endcomment %}
+                                    <th class="text-right">Total</th>
+                                    <th class="action">&nbsp;</th>
+                                </tr>
+                            </thead>
+                    		<tbody>
+                                {% for i in cart %}
+                                <tr class="cart__row border-bottom line1 cart-flex border-top">
+                                    <td class="cart__image-wrapper cart-flex-item">
+                                        <a href="{% url 'short-description'  i.product.id %}"><img class="cart__image" src="{{i.product.productimage.first.image.url}}" alt="Elastic Waist Dress - Navy / Small"></a>
+                                    </td>
+                                    <td class="cart__meta small--text-left cart-flex-item">
+                                        <div class="list-view-item__title">
+                                            <a href="{% url 'short-description'  i.product.id %}">{{i.product.name}}</a>
+                                        </div>
+                                        
+                                        {% comment %} <div class="cart__meta-text">
+                                            Color: Navy<br>Size: Small<br>
+                                        </div> {% endcomment %}
+                                    </td>
+                                    <td class="cart__price-wrapper cart-flex-item">
+                                        <span class="money">{{i.product.discount_price}}</span>
+                                    </td>
+                                    {% comment %} <td class="cart__update-wrapper cart-flex-item text-right">
+                                        <div class="cart__qty text-center">
+                                            <div class="qtyField">
+                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="icon icon-minus"></i></a>
+                                                <input class="cart__qty-input qty" type="text" name="updates[]" id="qty" value="1" pattern="[0-9]*">
+                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="icon icon-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </td> {% endcomment %}
+                                    <td class="text-right small--hide cart-price">
+                                        <div><span class="money">{{i.product.discount_price}}</span></div>
+                                    </td>
+                                    <td class="text-center small--hide"><a href="{{i.get_absolute_url}}" class="btn btn--secondary cart__remove" title="Remove tem"><i class="icon icon anm anm-times-l"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                    		<tfoot>
+                                <tr>
+                                    {% comment %} <td colspan="3" class="text-left"><a href="http://annimexweb.com/" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td> {% endcomment %}
+                                    <td colspan="3" class="text-left"><a href="{% url 'home' %}" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
+
+                                    <td colspan="3" class="text-right">
+	                                    <a href="{% url 'clear-cart' %}"><input type="button" class="btn btn-secondary btn--small  small--hide" value="Clear Cart " ></a>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                    </table> 
+                    </form>                   
+               	</div>            
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-4">
+                </div>
+                
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 cart__footer">
+                    <div class="solid-border">	
+                      <div class="row border-bottom pb-2">
+                        <span class="col-12 col-sm-6 cart__subtotal-title">Subtotal</span>
+                        <span class="col-12 col-sm-6 text-right"><span class="money">Rs. {{Tsub}}</span></span>
+                      </div>
+                      <div class="row border-bottom pb-2 pt-2">
+                        <span class="col-12 col-sm-6 cart__subtotal-title">Tax</span>
+                        <span class="col-12 col-sm-6 text-right">$10.00</span>
+                      </div>
+                      <div class="row border-bottom pb-2 pt-2">
+                        <span class="col-12 col-sm-6 cart__subtotal-title">Shipping</span>
+                        <span class="col-12 col-sm-6 text-right">Free shipping</span>
+                      </div>
+                      <div class="row border-bottom pb-2 pt-2">
+                        <span class="col-12 col-sm-6 cart__subtotal-title"><strong>Grand Total</strong></span>
+                        <span class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span class="money">Rs.{{total}} </span></span>
+                      </div>
+                      <div class="cart__shipping">Shipping &amp; taxes calculated at checkout</div>
+                      <p class="cart_tearm">
+                        <label>
+                          <input type="checkbox" name="tearm" class="checkbox" value="tearm" required="">
+                          I agree with the terms and conditions
+                        </label>
+                      </p>
+                         <a href="{% url 'checkout' %}"><input type="button" name="checkout" id="cartCheckout" class="btn btn--small-wide checkout" value="Proceed To Pay" ></a>                       
+                      <div class="paymnet-img"><img src="{% static 'assets/images/payment-img.jpg' %}" alt="Payment"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            
+    </div>
+    <!--End Body Content-->
+    
+    
+    <!--Scoll Top-->
+    <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+    <!--End Scoll Top-->
+    
+     <!-- Including Jquery -->
+     <script src="{% static 'assets/js/vendor/jquery-3.3.1.min.js' %}"></script>
+     <script src="{% static 'assets/js/vendor/jquery.cookie.js' %}"></script>
+     <script src="{% static 'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+     <script src="{% static 'assets/js/vendor/wow.min.js' %}"></script>
+     <!-- Including Javascript -->
+     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'assets/js/plugins.js' %}"></script>
+     <script src="{% static 'assets/js/popper.min.js' %}"></script>
+     <script src="{% static 'assets/js/lazysizes.js' %}"></script>
+     <script src="{% static 'assets/js/main.js' %}"></script>
+
+{% endblock cart %}

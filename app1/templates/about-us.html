@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block cc %}
+
+{% load static %}
+
+    <!--End Header-->
+    <title>{% block Au %}About us{% endblock Au %} </title>
+    
+    <!--Body Content-->
+    <div id="page-content">
+    	<!--Page Title-->
+    	<div class="page section-header text-center">
+			<div class="page-title">
+        		<div class="wrapper"><h1 class="page-width">About Us</h1></div>
+      		</div>
+		</div>
+        <!--End Page Title-->
+        
+        <div class="container">
+        	<div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                	<div class="text-center mb-4">
+                        <h2 class="h2">Introduction</h2>
+                        <div class="rte-setting">
+                            <p>Shopping-Vopping is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Shopping-Vopping aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country</p>
+                        </div>
+                    </div>
+               	</div>
+            </div>
+            <div class="row">
+            	<div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4"><img class="blur-up lazyload" data-src="{% static 'assets/images/about1.jpg' %}" src="assets/images/about1.jpg" alt="About Us" /></div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4"><img class="blur-up lazyload" data-src="{% static 'assets/images/about2.jpg' %}" src="assets/images/about2.jpg" alt="About Us" /></div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4"><img class="blur-up lazyload" data-src="{% static 'assets/images/about3.jpg' %}" src="assets/images/about3.jpg" alt="About Us" /></div>
+            </div>
+            <div class="row">
+            	<div class="col-12">
+                    <h2>Value proposition</h2>
+                    <p>Shopping-Vopping's value proposition revolves around giving consumers the power and ease of purchasing fashion and lifestyle products online. Offerings such as the largest in-season product catalogue, 100% authentic products, cash on delivery and 30 day return policy make Shopping-Vopping, the preferred shopping destination in the country. To make online shopping easier for you, a dedicated customer connect team is on standby to answer your queries 24x7.</p>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+            	<div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4">
+                	<h2 class="h2">Brands</h2>
+                    <div class="rte-setting"><p><strong>Shopping-Vopping understands its shoppers' needs and caters to them with choice of apparel, accessories, cosmetics and footwear from over 500 leading Indian and international brands. Prominent brands include Adidas, Nike, Puma, Catwalk, Inc 5, United Colors of Benetton, FCUK, Timberland, Avirate, FabIndia and Biba to name a few. You can also shop from some recently introduced labels such as - Roadster, Sher Singh, Dressberry, Kook N Keech and ETC.</strong></p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                	<h2 class="h2">Contact Us</h2>
+                    <ul class="addressFooter">
+                        <li><i class="icon anm anm-map-marker-al"></i><p>vijaynagar AB road,Apolo premiere, 456998 INDORE</p></li>
+                        <li class="phone"><i class="icon anm anm-phone-s"></i><p>(440) 000 000 0000</p></li>
+                        <li class="email"><i class="icon anm anm-envelope-l"></i><p>svsales@gmail.com</p></li>
+                    </ul>
+                    <hr />
+                    <ul class="list--inline site-footer__social-icons social-icons">
+                        <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Facebook"><i class="icon icon-facebook"></i></a></li>
+                        <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Twitter"><i class="icon icon-twitter"></i> <span class="icon__fallback-text">Twitter</span></a></li>
+                        <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Pinterest"><i class="icon icon-pinterest"></i> <span class="icon__fallback-text">Pinterest</span></a></li>
+                        <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Instagram"><i class="icon icon-instagram"></i> <span class="icon__fallback-text">Instagram</span></a></li>
+                        <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Tumblr"><i class="icon icon-tumblr-alt"></i> <span class="icon__fallback-text">Tumblr</span></a></li>
+                        <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on YouTube"><i class="icon icon-youtube"></i> <span class="icon__fallback-text">YouTube</span></a></li>
+                        <li><a class="social-icons__link" href="#" target="_blank" title="Belle Multipurpose Bootstrap 4 Template on Vimeo"><i class="icon icon-vimeo-alt"></i> <span class="icon__fallback-text">Vimeo</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+     <!--Logo Slider-->
+     <div class="section logo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="logo-bar">
+                <div class="logo-bar__item">
+                    <img src="{% static 'assets/images/logo/brandlogo1.jpg' %}" alt="" title="" />
+                </div>
+                <div class="logo-bar__item">
+                    <img src="{% static 'assets/images/logo/brandlogo2.jpg' %}" alt="" title="" />
+                </div>
+                <div class="logo-bar__item">
+                    <img src="{% static 'assets/images/logo/brandlogo3.jpg' %}" alt="" title="" />
+                </div>
+                <div class="logo-bar__item">
+                    <img src="{% static 'assets/images/logo/brandlogo4.jpg' %}" alt="" title="" />
+                </div>
+                <div class="logo-bar__item">
+                    <img src="{% static 'assets/images/logo/brandlogo5.jpg' %}" alt="" title="" />
+                </div>
+               
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Logo Slider-->
+    <!--End Body Content-->
+    
+    
+    <!--Scoll Top-->
+    <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+    <!--End Scoll Top-->
+    
+     <!-- Including Jquery -->
+     <script src="{% static 'assets/js/vendor/jquery-3.3.1.min.js' %}"></script>
+     <script src="{% static 'assets/js/vendor/jquery.cookie.js' %}"></script>
+     <script src="{% static 'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+     <script src="{% static 'assets/js/vendor/wow.min.js' %}"></script>
+     <!-- Including Javascript -->
+     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'assets/js/plugins.js' %}"></script>
+     <script src="assets/js/popper.min.js"></script>
+     <script src="assets/js/lazysizes.js"></script>
+     <script src="{% static 'assets/js/main.js' %}"></script>
+</div>
+</body>
+
+<!-- belle/about-us.html   11 Nov 2019 12:44:39 GMT -->
+</html>
+
+{% endblock cc %}
